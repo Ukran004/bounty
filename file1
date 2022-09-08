@@ -1,0 +1,40 @@
+
+total_price = 0
+card_type = "visa"
+is_same_bank = True
+is_expired=False
+
+def read_card():
+    print("Fetching Card Details from bank ....")
+    card_details = [1200,True,False]
+    total_price = card_details[0]
+    is_same_bank=card_details[1]
+    is_expired= card_details[2]
+    if is_expired:
+        print("Sorry, this card can not be accepted here")
+    else:
+        perform_tansaction(total_price,is_same_bank)
+
+
+def perform_tansaction(total_amt, is_same_bank):
+    charge = 0
+    if not is_same_bank:
+        charge = 5
+        if required_amt > total_amt:
+            return "Not enough balance"
+        else:
+            print(f"Ant withdrwn: {required_amt}")
+            print(f"Remaining available balance: {total_amt-required_amt-charge}")
+    else:
+        if required_amt > total_amt:
+            return "Not enough balance"
+        else:
+            print(f"Ant withdrwn: {required_amt}")
+            print(f"Remaining available balance: {total_amt-required_amt-charge}")
+
+
+print("Please insert your atm card:")
+input()
+print("Card inserted!!")
+required_amt = int(input("Please enter a amount:"))
+read_card()
