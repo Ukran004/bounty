@@ -46,4 +46,5 @@ Checkbutton(root, text="python", variable=var2).place(x=290,y=330)
 Button(root, text='Submit',width=20,bg='brown',fg='white').place(x=180,y=380)
 
 
+
 root.mainloop()
